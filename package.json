@@ -1,0 +1,46 @@
+{
+  "name": "trailpack-proxy-sitemap",
+  "version": "0.0.0",
+  "description": "Sitemap - Trailpack for Proxy Engine",
+  "homepage": "http://trailsjs.io",
+  "author": {
+    "name": "scott-wyatt",
+    "email": "scottwyatt86@gmail.com",
+    "url": "https://cali-style.com"
+  },
+  "main": "index.js",
+  "keywords": [
+    "Proxy Engine",
+    "sitemap",
+    "trailpack",
+    "trails",
+    "trailjs"
+  ],
+  "dependencies": {
+    "joi": "^10.2.2",
+    "proxy-engine-errors": "^1.0.1",
+    "trailpack": "^2.0.0",
+    "trailpack-proxy-engine": "^1.0.14",
+    "trailpack-router": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.0",
+    "eslint-config-trails": "^2.0.0",
+    "lodash": "^4.17.4",
+    "mocha": "^2.4.5",
+    "shortid": "^2.2.8",
+    "smokesignals": "^2.0.0",
+    "trails": "^2.0.0"
+  },
+  "scripts": {
+    "test": "eslint . && mocha"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "git@github.com:CaliStyle/trailpack-proxy-sitemap.git",
+  "license": "MIT"
+}

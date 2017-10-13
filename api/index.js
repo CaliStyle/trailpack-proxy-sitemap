@@ -1,0 +1,1 @@
+exports.sitemap = require('./sitemap')
