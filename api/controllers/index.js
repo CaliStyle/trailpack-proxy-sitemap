@@ -1,0 +1,1 @@
+exports.SitemapController = require('./SitemapController')

@@ -3,4 +3,7 @@
  *
  * @see {@link http://
  */
-module.exports = {}
+module.exports = {
+  host: '',
+  cache: 1000000
+}

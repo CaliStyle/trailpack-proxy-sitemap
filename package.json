@@ -1,8 +1,8 @@
 {
   "name": "trailpack-proxy-sitemap",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "description": "Sitemap - Trailpack for Proxy Engine",
-  "homepage": "http://trailsjs.io",
+  "homepage": "https://cali-style.io",
   "author": {
     "name": "scott-wyatt",
     "email": "scottwyatt86@gmail.com",
@@ -19,24 +19,30 @@
   "dependencies": {
     "joi": "^10.2.2",
     "proxy-engine-errors": "^1.0.1",
+    "sitemap": "^1.13.0",
     "trailpack": "^2.0.0",
-    "trailpack-proxy-engine": "^1.0.14",
+    "trailpack-proxy-engine": "^2.1.4",
     "trailpack-router": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "^3.0.0",
     "eslint-config-trails": "^2.0.0",
+    "express": "^4.15.2",
     "lodash": "^4.17.4",
     "mocha": "^2.4.5",
-    "shortid": "^2.2.8",
+    "pg": "^6.4.2",
+    "sails-disk": "^0.10.10",
     "smokesignals": "^2.0.0",
+    "supertest": "^2.0.1",
+    "trailpack-express": "^2.0.3",
+    "trailpack-proxy-sequelize": "^2.1.0",
     "trails": "^2.0.0"
   },
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint --fix . && mocha"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 6.0.0"
   },
   "eslintConfig": {
     "extends": "trails"
