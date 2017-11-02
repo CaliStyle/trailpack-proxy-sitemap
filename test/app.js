@@ -4,6 +4,7 @@ const _ = require('lodash')
 const smokesignals = require('smokesignals')
 const fs = require('fs')
 const path = require('path')
+const Sitemap = require('../').Sitemap
 
 const SERVER = process.env.SERVER || 'express'
 const ORM = process.env.ORM || 'sequelize'
@@ -69,7 +70,27 @@ if ( SERVER == 'express' ) {
 }
 
 const App = {
-  api: require('../api'),
+  api: {
+    sitemaps: {
+      TestSitemap: class TestSitemap extends Sitemap {
+        test() {
+          return Promise.resolve([
+            { url: '/page-1/',  changefreq: 'daily', priority: 0.3 },
+            { url: '/page-2/',  changefreq: 'monthly',  priority: 0.7 },
+            { url: '/page-3/', img: 'http://urlTest.com' }
+          ])
+        }
+
+        test2() {
+          return Promise.resolve([
+            { url: '/page-4/',  changefreq: 'daily', priority: 0.3 },
+            { url: '/page-5/',  changefreq: 'monthly',  priority: 0.7 },
+            { url: '/page-6/', img: 'http://urlTest.com' }
+          ])
+        }
+      }
+    }
+  },
   pkg: {
     name: 'trailpack-proxy-sitemaps-test',
     version: '1.0.0'

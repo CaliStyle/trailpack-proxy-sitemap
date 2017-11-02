@@ -36,6 +36,7 @@ module.exports = class ProxySitemapTrailpack extends Trailpack {
 
     return Promise.all([
       lib.ProxySitemap.configure(this.app),
+      lib.ProxySitemap.addSitemaps(this.app),
       lib.ProxySitemap.addPolicies(this.app),
       lib.ProxySitemap.addRoutes(this.app),
       lib.ProxySitemap.copyDefaults(this.app)
