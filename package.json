@@ -20,7 +20,7 @@
     "joi": "^10.2.2",
     "proxy-engine-errors": "^1.0.1",
     "sitemap": "^1.13.0",
-    "trailpack": "^2.0.0",
+    "trailpack": "^2.1.0",
     "trailpack-proxy-engine": "^2.1.4",
     "trailpack-router": "^2.1.0"
   },
