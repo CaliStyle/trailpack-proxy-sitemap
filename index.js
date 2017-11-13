@@ -47,7 +47,9 @@ module.exports = class ProxySitemapTrailpack extends Trailpack {
    * TODO document method
    */
   initialize () {
-
+    return Promise.all([
+      this.app.services.ProxySitemapService.build()
+    ])
   }
 
   constructor (app) {

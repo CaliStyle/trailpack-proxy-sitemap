@@ -18,9 +18,12 @@ describe('ProxySitemapService', () => {
         done(err)
       })
   })
-  it('should have the sitemap in app.sitemap', (done) => {
+  it('should have the sitemap in app.sitemap after build()', (done) => {
     console.log(global.app.sitemap)
     assert.equal(global.app.sitemap.urls.length, 6)
+    // global.app.sitemap.urls.forEach(url => {
+    //   assert.include(url.url, global.app.config.get('proxySitemap.host'))
+    // })
     done()
   })
 })

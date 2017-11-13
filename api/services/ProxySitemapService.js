@@ -1,7 +1,9 @@
+/* eslint new-cap: 0*/
 /* eslint no-console: [0] */
 'use strict'
 
 const Service = require('trails/service')
+const sm = require('sitemap')
 
 /**
  * @module ProxySitemapService
@@ -34,8 +36,21 @@ module.exports = class ProxySitemapService extends Service {
           urls = [...urls, ...sitemap]
         })
 
-        urls.forEach(url => {
+        // Build a new map
+        const newMap = sm.createSitemap({
+          hostname: this.app.config.get('proxySitemap.host'),
+          cacheTime: this.app.config.get('proxySitemap.cache'),
+          urls: urls
+        })
+
+        // Initiate the map
+        newMap.toString()
+
+        // Map the composed urls to the app's sitemap
+        newMap.urls.forEach(url => {
+          // Remove the old url object if it exists
           this.app.sitemap.del(url)
+          // Add the new url object
           this.app.sitemap.add(url)
         })
 
