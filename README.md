@@ -15,6 +15,7 @@ $ npm install --save trailpack-proxy-sitemap
 
 ## Configure
 
+Require the trailpack
 ```js
 // config/main.js
 module.exports = {
@@ -25,11 +26,27 @@ module.exports = {
 }
 ```
 
+Configure the trailpack
 ```js
 // config/proxySitemap.js
 module.exports = {
   host: 'https://<hostname>',
   cache: 1000000
+}
+```
+
+Run the Build Cronjob
+```
+// config/proxyEngine
+...
+crons_config: {
+  auto_schedule: true,
+  uptime_delay: 180,
+  profiles: {
+    development: [
+      'SitemapsCron.build'
+    ]
+  }
 }
 ```
 
