@@ -4,6 +4,9 @@ const _ = require('lodash')
 const smokesignals = require('smokesignals')
 const fs = require('fs')
 const path = require('path')
+
+const fsStore = require('cache-manager-fs')
+
 const Sitemap = require('../').Sitemap
 
 const SERVER = process.env.SERVER || 'express'
@@ -12,6 +15,7 @@ const DIALECT = process.env.DIALECT || 'sqlite'
 
 const packs = [
   require('trailpack-router'),
+  require('trailpack-proxy-cache'),
   require('trailpack-proxy-engine'),
   require('../') // trailpack-proxy-sitemap
 ]
@@ -100,9 +104,26 @@ const App = {
     main: {
       packs: packs
     },
+    proxyCache: {
+      stores: [
+        {
+          name: 'memory',
+          store: 'memory',
+          max: 100,
+          ttl: 0
+        }, {
+          name: 'fs',
+          store: fsStore
+        }
+      ],
+      defaults: ['memory']
+    },
     proxySitemap: {
       host: 'https://test.com',
-      cache: 100000
+      cache: {
+        prefix: 'memory',
+        eject: 100000
+      }
     },
     proxyEngine: {
       live_mode: false,

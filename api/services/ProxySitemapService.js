@@ -39,7 +39,7 @@ module.exports = class ProxySitemapService extends Service {
         // Build a new map
         const newMap = sm.createSitemap({
           hostname: this.app.config.get('proxySitemap.host'),
-          cacheTime: this.app.config.get('proxySitemap.cache'),
+          cacheTime: this.app.config.get('proxySitemap.cache.eject'),
           urls: urls
         })
 

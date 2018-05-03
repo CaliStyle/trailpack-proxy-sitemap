@@ -5,5 +5,8 @@
  */
 module.exports = {
   host: '',
-  cache: 1000000
+  cache: {
+    prefix: 'memory',
+    eject: 1000000
+  }
 }

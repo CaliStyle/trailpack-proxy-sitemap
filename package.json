@@ -1,6 +1,6 @@
 {
   "name": "trailpack-proxy-sitemap",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Sitemap - Trailpack for Proxy Engine",
   "homepage": "https://cali-style.io",
   "author": {
@@ -25,6 +25,7 @@
     "trailpack-router": "^2.1.0"
   },
   "devDependencies": {
+    "cache-manager-fs": "^1.0.6",
     "eslint": "^3.0.0",
     "eslint-config-trails": "^2.0.0",
     "express": "^4.15.2",
@@ -35,6 +36,7 @@
     "smokesignals": "^2.0.0",
     "supertest": "^2.0.1",
     "trailpack-express": "^2.0.3",
+    "trailpack-proxy-cache": "^2.1.0",
     "trailpack-proxy-sequelize": "^2.1.0",
     "trails": "^2.0.0"
   },

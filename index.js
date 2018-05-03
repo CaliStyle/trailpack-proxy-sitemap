@@ -19,6 +19,10 @@ module.exports = class ProxySitemapTrailpack extends Trailpack {
       return Promise.reject(new Error('Trailpack-proxy-cart requires trailpack-proxy-engine!'))
     }
 
+    if (!_.includes(_.keys(this.app.packs), 'proxy-cache')) {
+      return Promise.reject(new Error('Trailpack-proxy-cart requires trailpack-proxy-cache!'))
+    }
+
     if (!this.app.config.proxySitemap) {
       return Promise.reject(new Error('No configuration found at config.proxySitemap!'))
     }
